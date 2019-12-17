@@ -1,2 +1,2 @@
 # torchssim
-Structural Similarity (SSIM) for PyTorch
+Structural Similarity (SSIM) in PyTorch
