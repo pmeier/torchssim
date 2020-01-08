@@ -5,11 +5,17 @@ from torch import nn
 from torchimagefilter import ImageFilter, GaussFilter
 from .ssim import *
 
-__all__ = ["SSIM", "SimplifiedSSIM", "MSSIM", "SimplifiedMSSIM"]
+__all__ = [
+    "get_default_ssim_image_filter",
+    "SSIM",
+    "SimplifiedSSIM",
+    "MSSIM",
+    "SimplifiedMSSIM",
+]
 
 
-def get_default_image_filter() -> GaussFilter:
-    return GaussFilter(std=1.5, output_shape="same", padding_mode="replicate")
+def get_default_ssim_image_filter() -> GaussFilter:
+    return GaussFilter(std=1.5, radius=5, output_shape="same", padding_mode="replicate")
 
 
 class _SSIMModule(nn.Module):
@@ -17,7 +23,7 @@ class _SSIMModule(nn.Module):
         super().__init__()
 
         if image_filter is None:
-            image_filter = get_default_image_filter()
+            image_filter = get_default_ssim_image_filter()
         self.image_filter = image_filter
 
     def forward(self, input: torch.FloatTensor, target: torch.FloatTensor):

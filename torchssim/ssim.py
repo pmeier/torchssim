@@ -8,6 +8,11 @@ __all__ = [
     "SSIMContext",
     "SimplifiedSSIMContext",
     "calculate_ssim_repr",
+    "calculate_luminance",
+    "calculate_contrast",
+    "calculate_structure",
+    "calculate_non_structural",
+    "calculate_structural",
     "calculate_ssim",
     "calculate_simplified_ssim",
 ]
