@@ -8,7 +8,7 @@ install_requires = (
     "torchimagefilter@https://github.com/pmeier/torchimagefilter/archive/master.zip",
 )
 
-testing_requires = ("numpy", "pillow", "torchvision")
+testing_requires = ("requests", "pillow<7.0.0", "numpy", "torchvision")
 
 
 classifiers = (
@@ -30,7 +30,7 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(exclude=("test",)),
     install_requires=install_requires,
-    extras_require={"testing": testing_requires,},
+    extras_require={"testing": testing_requires},
     python_requires=">=3.6",
     classifiers=classifiers,
 )

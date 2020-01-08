@@ -11,10 +11,9 @@ if __name__ == "__main__":
     # and are cleared for unrestricted usage
     url_root = "http://www.r0k.us/graphics/kodak/kodak/"
 
-    # The portrait images are left out to avoid cropping before the comparison
-    num_images = 24
+    # Only the portrait images are used to avoid cropping before the comparison
     portrait_images_idcs = (4, 9, 10, 17, 18, 19)
-    for idx in set(range(1, num_images + 1)) - set(portrait_images_idcs):
+    for idx in portrait_images_idcs:
         file_name = f"kodim{idx:02d}.png"
 
         file = path.join(file_root, file_name)
