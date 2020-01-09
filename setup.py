@@ -21,7 +21,7 @@ classifiers = (
 setup(
     name="torchssim",
     description="Structural Similarity (SSIM) in PyTorch",
-    version="0.1",
+    version="0.2-dev",
     url="https://github.com/pmeier/torchssim",
     license="BSD-3",
     author="Philip Meier",
